@@ -1,0 +1,118 @@
+@use "variables" as *;
+
+/* подвал */
+.footer {
+  max-width: 95%;
+  padding: 60px 0 30px;
+  background: $blue;
+  color: rgba(255, 255, 255, 0.7);
+  padding-inline: 250px;
+
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+  margin-bottom: 40px;
+  border-top: 2px solid rgba(255, 255, 255, 0.15);
+  padding-top: 60px;
+
+}
+
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.footer-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: $white;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.footer-contact-icon {
+  font-weight: 700;
+  color: $white;
+  width: 16px;
+}
+
+/* колонки навигации */
+.footer-nav {
+  display: flex;
+  gap: 80px;
+}
+
+.footer-nav-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: $white;
+  margin-bottom: 16px;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav-link {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.3s;
+}
+
+.footer-nav-link:hover {
+  color: $white;
+}
+
+/* копирайт */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+
+@media (max-width: 768px) {
+  .footer{
+      padding-inline: 0px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .footer-brand {
+    max-width: 100%;
+  }
+  .footer-nav {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-nav {
+    flex-direction: column;
+    gap: 30px;
+  }
+}

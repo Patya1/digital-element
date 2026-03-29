@@ -1,0 +1,17 @@
+{
+  "name": "de-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src/**/*.js"
+  },
+  "devDependencies": {
+    "vite": "^8.0.2",
+    "sass": "^1.77.0",
+    "@delement/eslint-config-master": "^1.2.0",
+    "eslint": "^9.0.0"
+  }
+}

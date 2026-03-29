@@ -1,0 +1,158 @@
+@use "variables" as *;
+
+// шапка
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 24px 0;
+  background: transparent;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+// навигация на десктопе скрыта, бургер всегда виден (как в макете)
+.nav {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 15px;
+  color: $blue-nav;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: $blue;
+  transition: width 0.3s;
+}
+
+.nav-link:hover {
+  color: $blue;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* бургер - всегда виден */
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+}
+
+.burger-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: $blue-nav;
+  border-radius: 2px;
+}
+
+
+/* мобильное меню */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.mobile-menu.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.mobile-menu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.mobile-menu.active .mobile-menu-overlay {
+  opacity: 1;
+}
+
+.mobile-menu-body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  max-width: 80%;
+  height: 100%;
+  background: $white;
+  padding: 80px 30px 30px;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobile-menu.active .mobile-menu-body {
+  transform: translateX(0);
+}
+
+.mobile-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: $dark;
+  transition: color 0.3s;
+}
+.mobile-close-btn:hover {
+  color: $blue;
+}
+
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-link {
+  font-size: 18px;
+  font-weight: 500;
+  color: $dark;
+  transition: color 0.3s;
+}
+.mobile-link:hover {
+  color: $blue;
+}

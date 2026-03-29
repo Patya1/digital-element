@@ -1,0 +1,88 @@
+@use "variables" as *;
+
+// сброс
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: $text;
+  background: $white;
+  line-height: 1.6;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul { list-style: none; }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cta-footer{
+  background-color: $blue-light;
+}
+/* кнопка */
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: $blue-light;
+  color: $white;
+  box-shadow: 5px 10px 20px rgba(53, 110, 173, 0.2);
+}
+
+.btn-primary:hover {
+  background: #4a85ba;
+  transform: translateY(-2px);
+  box-shadow: 5px 10px 30px rgba(53, 110, 173, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 14px 32px;
+    font-size: 14px;
+  }
+}
